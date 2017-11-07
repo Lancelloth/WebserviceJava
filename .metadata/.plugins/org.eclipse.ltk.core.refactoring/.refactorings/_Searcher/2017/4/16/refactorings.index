@@ -1,0 +1,7 @@
+1492358758381	Rename type 'VaccumInitialStateGenerator'
+1492358765032	Rename type 'VacuumFinalStateChecker'
+1492358770971	Rename type 'VacuumState'
+1492358776491	Rename type 'VacuumSuccessorGenerator'
+1492360546168	Rename package 'vacuumworld'
+1492656275115	Rename local variable 'vacuumState'
+1492658361298	Rename local variable 'saposNaLagoa'

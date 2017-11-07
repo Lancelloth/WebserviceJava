@@ -1,0 +1,5 @@
+1492360574935	Rename package 'vacuumworld'
+1492370518870	Rename type 'VaccumInitialStateGenerator'
+1492370524421	Rename type 'VacuumFinalStateChecker'
+1492370533013	Rename type 'VacuumState'
+1492370539510	Rename type 'VacuumSuccessorGenerator'
