@@ -1,0 +1,41 @@
+package estoque;
+
+import javax.jws.WebService;
+import java.sql.*;
+
+@WebService(endpointInterface = "estoque.EstoqueServer")
+public class EstoqueServerImpl implements EstoqueServer {
+		
+	public String incluir(String descricao, int estoque) {
+		String query;
+		query = "INSERT INTO estoque (descricao, quantidade) VALUES ('"+descricao+"', '"+estoque+"');";
+		Connetion c = new Connetion();
+		c.EscreveBanco(query);
+		return "Adicionado o produto: " + descricao + "Na quantidade: " + estoque;
+	}
+	
+	public String consultar(int cod) {
+		String query;
+		query = "SELECT codigo, descricao, quantidade FROM estoque WHERE codigo = "+cod+";";
+		Connetion c = new Connetion();
+		String rs = c.leBanco(query);
+		return rs;
+	}
+
+	public String vender(int cod, int qtd) {
+		String query;
+		query = "UPDATE estoque SET quantidade = quantidade - '"+qtd+"' WHERE codigo = '"+cod+"';";
+		Connetion c = new Connetion();
+		c.EscreveBanco(query);
+		return "Produto de código: " + cod +"teve"+ qtd +"quantidades vendidas";
+	}
+
+	public String reposicao(int codigo, int qtd) {
+		String query;
+		query = "UPDATE estoque SET quantidade = quantidade + '"+ qtd +"' WHERE codigo = '"+codigo+"';";
+		Connetion c = new Connetion();
+		c.EscreveBanco(query);
+		return "Item código: "+ codigo +" Reposto";
+	}
+
+}
